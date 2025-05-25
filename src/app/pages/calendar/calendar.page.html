@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Mi Calendario Personal</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <ion-item>
+    <ion-label>Seleccionar fecha</ion-label>
+    <ion-datetime
+      presentation="date"
+      (ionChange)="onDateChange($event)"
+      [value]="selectedDate">
+    </ion-datetime>
+  </ion-item>
+
+  <ion-list>
+    <ion-item *ngFor="let hour of hours">
+      <ion-label>{{ hour }}</ion-label>
+      <ion-input
+        placeholder="Escribe actividad"
+        [(ngModel)]="activities[selectedDate][hour]">
+      </ion-input>
+    </ion-item>
+  </ion-list>
+
+</ion-content>

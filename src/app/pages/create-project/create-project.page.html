@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Crear Proyecto</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form  (ngSubmit)="onSubmit()">
+    <ion-item>
+      <ion-label position="floating">Nombre del proyecto</ion-label>
+      <ion-input [(ngModel)]="nameP" name="nameP"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating" >Descripción</ion-label>
+      <ion-textarea [(ngModel)]="description" name="description"></ion-textarea>
+    </ion-item>
+
+   
+    <ion-button expand="block" type="submit">Crear Proyecto</ion-button>
+    <ion-button expand="block" color="danger" (click)="cancelarAction()">Cancelar</ion-button>
+  </form>
+</ion-content>
+ 

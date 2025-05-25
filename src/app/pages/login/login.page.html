@@ -1,0 +1,43 @@
+<ion-content>
+  <div class="fullheight xc">
+      <div class="vcs">
+        <!-- Imagen de bienvenida -->
+        <ion-img src="assets/images/imageWelcome.png" class="welcome-img"> </ion-img>
+
+        <!-- Formulario de Login -->
+        <form [formGroup]="loginForm" class="login-form">
+          
+          <ion-item>
+            <ion-input formControlName="email" type="email" placeholder="Correo" required></ion-input>
+          </ion-item>
+      
+          <ion-item>
+            <ion-input formControlName="password" type="password" placeholder="Contraseña" required></ion-input>
+          </ion-item>
+          
+          <!-- Botón de ingreso -->
+          <ion-button expand="block" shape="round" [disabled]="!loginForm.valid" (click)="login()" class="login-btn">
+            <ion-icon slot="start" name="checkmark-circle-outline"></ion-icon>
+            Ingresar
+          </ion-button>
+
+          <!-- Enlace para registrarse -->
+          <div class="register-link">
+            <h5>¿Sin cuenta? <a href="/register">Regístrate</a></h5>
+          </div>
+
+        </form>
+      </div>
+  </div>
+</ion-content>
+
+<!-- Footer con imagen -->
+<ion-footer class="ion-no-border">
+  <ion-toolbar>
+    <div class="exception-body">
+      <div class="exception-footer">
+        <img class="imgFooter" src="/assets/images/icon.png" alt="Logo Footer">
+      </div>
+    </div>
+  </ion-toolbar>
+</ion-footer>

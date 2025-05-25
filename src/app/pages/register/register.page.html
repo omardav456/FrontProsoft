@@ -1,0 +1,49 @@
+
+
+<ion-content [fullscreen]="true">
+  <div class="fullheight xc">
+    <div class="vcs">
+
+  
+      <form (ngSubmit)="onRegister()" class="register-form" >
+        <ion-item>
+          <ion-input type="text" placeholder="Nombre Completo" [(ngModel)]="name" name="name" ></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-input  type="text" placeholder="Correo electronico" [(ngModel)]="email" name="email" ></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-input type="password" value="password" placeholder="Contraseña" [(ngModel)]="password" name="password" ></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-input type="password" value="password_confirm" placeholder="Confirmar contraseña" [(ngModel)]="password_confirm" name="password_confirm" ></ion-input>
+        </ion-item>
+        <ion-item class="custom-checkbox-item">
+          <ion-checkbox labelPlacement="end" [(ngModel)]="isChecked" name="isChecked" class="custom-checkbox">¿Perteneces a una empresa?</ion-checkbox>
+        </ion-item>
+        <ion-item *ngIf="isChecked">
+          <ion-input type="text" placeholder="Código de Empresa" [(ngModel)]="company" name="company" ></ion-input>
+        </ion-item>
+        <ion-item class="custom-checkbox-item">
+        <ion-checkbox labelPlacement="end" class="custom-checkbox">I agree to the <a href="https://es.wikipedia.org/wiki/Wikipedia:Portada" (click)="$event.stopPropagation()">terms and conditions</a></ion-checkbox>
+        </ion-item>
+    
+        <ion-button expand="full" type="submit">Registrar</ion-button>
+        <div class="login-link">
+            <h5>¿Tienes cuenta? <a href="/">Iniciar Sesión</a></h5>
+        </div>
+      </form>
+    </div>
+  </div>
+</ion-content>
+
+<!-- Footer con imagen -->
+<ion-footer class="ion-no-border">
+  <ion-toolbar>
+    <div class="exception-body">
+      <div class="exception-footer">
+        <img class="imgFooter" src="/assets/images/icon.png" alt="Logo Footer">
+      </div>
+    </div>
+  </ion-toolbar>
+</ion-footer>

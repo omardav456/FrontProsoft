@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Activa tu Cuenta</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding" *ngIf="showForm">
+  <form (ngSubmit)="activateAccount()">
+    <ion-item>
+      <ion-label position="floating">Codigo de activación</ion-label>
+      <ion-input [(ngModel)]="code" name="code" type="text" required></ion-input>
+    </ion-item>
+
+    <ion-button expand="block" type="submit">Activate</ion-button>
+  </form>
+
+</ion-content>
+

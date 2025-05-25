@@ -1,0 +1,28 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Dashboard
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div *ngFor="let project of listProject">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>{{project.name}}</ion-card-title>
+        <ion-card-subtitle>Administrador</ion-card-subtitle>
+      </ion-card-header>
+    
+      <ion-card-content>
+        {{project.description}}
+      </ion-card-content>
+    
+      <ion-button fill="clear" (click)="deleteProject(project.id)">Eliminar</ion-button>
+      <ion-button fill="clear" (click)="openProject(project.id)">Abrir</ion-button>
+    </ion-card>
+  </div>
+  
+
+  <!-- <app-explore-container name="Tab 1 page"></app-explore-container> -->
+</ion-content>
