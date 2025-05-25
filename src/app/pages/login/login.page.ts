@@ -65,8 +65,9 @@ export class LoginPage implements OnInit {
       );
 
       sessionStorage.setItem('user_id', String(response.id));
-      this.router.navigate(['/tabs/tab1']);
+      this.router.navigate(['/tabs/tab1']); 
     } catch (error) {
+      alert("ERROR");
       this.presentAlert('Error al iniciar sesión');
     }
   }
